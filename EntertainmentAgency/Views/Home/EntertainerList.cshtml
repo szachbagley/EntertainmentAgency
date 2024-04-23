@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Entertainer>
+
+<a class="btn btn-success" asp-controller="Home" asp-action="NewEnt">Add Entertainer</a>
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Stage Name</td>
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@x.EntStageName</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Detail" asp-route-id="@x.EntertainerID">Details</a></td>
+            </tr>
+        </tbody>
+    }
+</table>
